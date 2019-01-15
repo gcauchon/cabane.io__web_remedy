@@ -47,6 +47,11 @@ defmodule Remedy.Mixfile do
       {:ecto_sql, "~> 3.0"},
       {:postgrex, "~> 0.14"},
 
+      # GraphQL
+      {:absinthe, "~> 1.4"},
+      {:absinthe_plug, "~> 1.4"},
+      {:dataloader, "~> 1.0"},
+
       # Authentication
       {:basic_auth, "~> 2.2"},
 

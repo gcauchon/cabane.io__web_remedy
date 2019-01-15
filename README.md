@@ -9,8 +9,9 @@
 3. `iex`, shell interactif
 4. GraphQL
 5. Web Sockets
-6. Tests
-7. Déploiement
+6. Processus asynchrones 
+7. Tests
+8. Déploiement
 
 ## 1. Configuration
 
@@ -91,8 +92,10 @@ The system looks OK.
 ## 5. Web Sockets
 
 
-## 6. Tests
+## 6. Processus asynchrones
 
 
-## 7. Déploiement
+## 7. Tests
 
+
+## 8. Déploiement

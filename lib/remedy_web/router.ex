@@ -22,7 +22,33 @@ defmodule RemedyWeb.Router do
     get("/health", Health.Controller, :index)
   end
 
-  scope "/", RemedyWeb do
+  # GraphQL
+  scope "/graphql" do
     pipe_through(:api)
+
+    forward(
+      "/",
+      Absinthe.Plug,
+      json_codec: Jason,
+      schema: Remedy.GraphQL.Schema,
+      socket: RemedyWeb.Socket
+    )
+  end
+
+  # Development tools
+  if :dev == Mix.env() do
+    # GraphiQL
+    scope "/graphiql" do
+      pipe_through(:api)
+
+      forward(
+        "/",
+        Absinthe.Plug.GraphiQL,
+        interface: :playground,
+        json_codec: Jason,
+        schema: Remedy.GraphQL.Schema,
+        socket: RemedyWeb.Socket
+      )
+    end
   end
 end

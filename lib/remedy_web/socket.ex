@@ -30,10 +30,4 @@ defmodule RemedyWeb.Socket do
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil
-
-  def connect(_params, socket, _connect_info) do
-    {:ok, socket}
-  end
-
-  def id(_socket), do: nil
 end
