@@ -75,8 +75,7 @@ defmodule Remedy.Mixfile do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"],
-      loadpaths: ["run priv/scripts/enforce_otp_release_version.exs", "loadpaths"]
+      test: ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
 
