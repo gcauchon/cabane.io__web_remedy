@@ -19,9 +19,12 @@ npm-debug.log
 # this depending on your deployment strategy.
 /priv/static/
 
-# Dialyzer plts are stored in the repo to allow CI to cache the files
+# Dialyzer plts are not stored in the repo, Travis already cache the files
 /priv/plts/*.plt
 /priv/plts/*.plt.hash
+
+# Elixir language server
+.elixir_ls/
 
 # Files matching config/*.secret.exs pattern contain sensitive
 # data and you should not commit them into version control.
