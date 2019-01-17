@@ -52,8 +52,8 @@ defmodule Remedy.Mixfile do
       {:absinthe_plug, "~> 1.4"},
       {:dataloader, "~> 1.0"},
 
-      # Authentication
-      {:basic_auth, "~> 2.2"},
+      # Gravatar api client
+      {:gravity, "~> 1.0.1"},
 
       # Translations
       {:gettext, "~> 0.16"},
