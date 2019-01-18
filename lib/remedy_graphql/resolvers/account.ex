@@ -1,11 +1,11 @@
 defmodule Remedy.GraphQL.Resolvers.Account do
   alias Remedy.Account
 
-  def presenters(_, %{id: id}, _) when is_bitstring(id) do
+  def presenters(_parent, %{id: id}, _resolution) when is_bitstring(id) do
     {:ok, Account.find(id)}
   end
 
-  def presenters(_, _, _) do
+  def presenters(_parent, _arguments, _resolution) do
     {:ok, Account.list_all()}
   end
 end
