@@ -28,7 +28,7 @@ COPY . .
 RUN mix compile --force
 
 RUN npm install --prefix assets
-RUN mix phx.digest
+RUN npm run deploy --prefix assets && mix phx.digest
 
 RUN mkdir -p /opt/build && \
     mix release --verbose && \

@@ -4,7 +4,7 @@ defmodule Remedy.Mixfile do
   def project do
     [
       app: :remedy,
-      version: "0.0.1",
+      version: "0.1.0",
       elixir: "1.8.0",
       erlang: "21.2.2",
       elixirc_paths: elixirc_paths(Mix.env()),
