@@ -58,9 +58,6 @@ defmodule Remedy.Mixfile do
       # Translations
       {:gettext, "~> 0.16"},
 
-      # Errors
-      {:sentry, "~> 6.2"},
-
       # Linting
       {:credo, "~> 1.0.0", only: [:dev, :test]},
       {:credo_envvar, "~> 0.1.0", only: ~w(dev test)a, runtime: false},

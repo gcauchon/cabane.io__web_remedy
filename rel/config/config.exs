@@ -81,19 +81,3 @@ config :remedy, Remedy.Gettext, default_locale: "en"
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
-
-# Configure Basic Auth
-if Environment.exists?("BASIC_AUTH_USERNAME") do
-  config :remedy,
-    basic_auth: [
-      username: Environment.get("BASIC_AUTH_USERNAME"),
-      password: Environment.get("BASIC_AUTH_PASSWORD")
-    ]
-end
-
-# Configure Sentry
-config :sentry,
-  dsn: Environment.get("SENTRY_DSN"),
-  environment_name: Environment.get("SENTRY_ENVIRONMENT_NAME"),
-  included_environments: [:prod],
-  root_source_code_path: File.cwd!()

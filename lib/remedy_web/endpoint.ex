@@ -9,7 +9,6 @@ defmodule RemedyWeb.Endpoint do
 
   plug(:canonical_host)
   plug(:force_ssl)
-  plug(:basic_auth)
   plug(:session)
 
   # Serve at "/" the static files from "priv/static" directory.
@@ -72,18 +71,6 @@ defmodule RemedyWeb.Endpoint do
       opts = Plug.SSL.init(rewrite_on: [:x_forwarded_proto])
 
       Plug.SSL.call(conn, opts)
-    else
-      conn
-    end
-  end
-
-  defp basic_auth(conn, _opts) do
-    basic_auth_config = Application.get_env(:remedy, :basic_auth)
-
-    if basic_auth_config do
-      opts = BasicAuth.init(use_config: basic_auth_config)
-
-      BasicAuth.call(conn, opts)
     else
       conn
     end

@@ -24,7 +24,7 @@
   ["NE PAS S’OXIDER AVEC RUST", "Pierre-Alexandre St-Jean", "Pleo"]
 ]
 |> Enum.map(fn [title, name, company] ->
-  %Remedy.Accounts.Presenter{
+  %Remedy.Account.Presenter{
     name: name,
     company: company,
     title: title

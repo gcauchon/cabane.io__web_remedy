@@ -1,7 +1,8 @@
-defmodule Remedy.Accounts.Presenter do
+defmodule Remedy.Account.Presenter do
   use Ecto.Schema
 
-  schema "presenters" do
+  @primary_key {:id, Ecto.UUID, autogenerate: true}
+  schema("presenters") do
     field(:name, :string)
     field(:handle, :string)
     field(:company, :string)

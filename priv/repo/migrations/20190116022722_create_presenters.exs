@@ -2,7 +2,8 @@ defmodule Remedy.Repo.Migrations.CreatePresenters do
   use Ecto.Migration
 
   def change do
-    create table(:presenters) do
+    create table(:presenters, primary_key: false) do
+      add(:id, :uuid, primary_key: true)
       add(:name, :string)
       add(:handle, :string, size: 48)
       add(:company, :string, size: 24)
@@ -11,6 +12,6 @@ defmodule Remedy.Repo.Migrations.CreatePresenters do
       timestamps()
     end
 
-    create(index(:presenters, :handle, unique: true))
+    unique_index(:presenters, :handle)
   end
 end
