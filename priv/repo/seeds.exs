@@ -16,7 +16,7 @@
   ["ARCHITECTURE KAPPA SUR AWS", "Joey Bolduc-Gilbert", "XpertSea"],
   ["CONSTRUIRE SON PROVIDER TERRAFORM", "André Thériault/Maxime Coulombe", "Coveo"],
   ["RÉSEAU DE NEURONES EN PYTHON", "Carl Chouinard", "Vooban"],
-  ["ELIXIR, REMÈDE FONCTIONNEL AU WEB", "Guillaume Cauchon", "Mirego"],
+  ["ELIXIR, REMÈDE FONCTIONNEL AU DÉVELOPPEMENT WEB", "Guillaume Cauchon", "Mirego"],
   ["PERSONNALISATION AVEC VUEJS", "Jean-Sébastien Tremblay", "Snipcart"],
   ["DÉPLOIEMENT AVEC KUBEFLOW", "Mathieu D’Amours", "Braver"],
   ["TEMPLATING AVEC LIT-HTML", "Philippe Desjardins", "XpertSea"],

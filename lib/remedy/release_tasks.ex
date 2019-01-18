@@ -1,9 +1,16 @@
 defmodule Remedy.ReleaseTasks do
-  @start_apps ~w(crypto ssl postgrex ecto_sql)a
+  @start_apps ~w(crypto ssl postgrex ecto ecto_sql)a
 
-  def migrate do
+  def migrate(_argv) do
     start_services()
     run_migrations()
+    stop_services()
+  end
+
+  def seed(_argv) do
+    start_services()
+    run_migrations()
+    run_seeds()
     stop_services()
   end
 
@@ -27,6 +34,21 @@ defmodule Remedy.ReleaseTasks do
 
     IO.puts("Running migrations for #{app}")
     Ecto.Migrator.run(repo, migrations_path, :up, all: true)
+  end
+
+  defp run_seeds() do
+    Enum.each(repos(), &run_seeds_for/1)
+  end
+
+  defp run_seeds_for(repo) do
+    app = Keyword.get(repo.config, :otp_app)
+    # Run the seed script if it exists
+    seed_script = priv_path_for(app, repo, "seeds.exs")
+
+    if File.exists?(seed_script) do
+      IO.puts("Running seed script..")
+      Code.eval_file(seed_script)
+    end
   end
 
   defp priv_path_for(app, repo, filename) do
