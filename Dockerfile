@@ -27,8 +27,9 @@ RUN mix deps.get --only ${MIX_ENV}
 COPY . .
 RUN mix compile --force
 
-RUN npm install --prefix assets
-RUN npm run deploy --prefix assets && mix phx.digest
+RUN npm ci --prefix assets
+RUN npm run build --prefix assets
+RUN mix phx.digest
 
 RUN mkdir -p /opt/build && \
     mix release --verbose && \

@@ -24,3 +24,18 @@ https://speakerdeck.com/gcauchon/elixir-remede-fonctionnel-pour-le-developpement
 1. `Absinthe` → client _GraphQL_ et plus
 1. **OTP** → process, supervisor, `GenServer`, `Agent`, `Task`, etc…
 1. `Distillery` → release OTP, principes _Twelve-factor App_
+
+# Quikstart!
+
+1. Lancer une instances Postgres
+  ```shell
+  > docker-compose up --detach postgresql
+  ```
+2. Builder l’image Docker
+  ```shell
+  > make build
+  ```
+3. Démarer l’application dans son image
+  ```
+  > docker-compose up application
+  ```
